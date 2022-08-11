@@ -43,43 +43,42 @@ function romanToInt(s: string): number
 				curNum = value;
 			}
 		})	
+
+		function double(n: number){
+			num += n
+			skipNext = true;
+		}
 		
 		switch (s[i]) {
 			case "I":
 				if (s[i +1] === "V") {
-					num += 4;
-					skipNext = true;
+					double(4);
 					continue;
 				} 
 				else if (s[i +1] === "X") {
-					num += 9;
-					skipNext = true;
+					double(9);
 					continue;
 				} 
 				break;
 
 			case "X":
 				if (s[i +1] === "L") { 
-					num += 40;
-					skipNext = true;
+					double(40);
 					continue;
 				}
 				else if (s[i +1] === "C") {
-					num += 90;	
-					skipNext = true;
+					double(90);
 					continue;
 				} 
 				break;
 
 			case "C":
 				if (s[i +1] === "D") {
-					num += 400;	
-					skipNext = true;
+					double(400);
 					continue;
 				} 
 				else if (s[i +1] === "M") {
-					num += 900;	
-					skipNext = true;
+					double(900);
 					continue;
 				} 
 				break;
