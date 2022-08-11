@@ -1,7 +1,7 @@
 #!/usr/bin/env ts-node
 
-let tests = ["()", "()[]{}", "(]"];
-let answers = [true, true, false];
+let tests = ["()", "()[]{}", "(]", "({}[])[{}]()"];
+let answers = [true, true, false, true];
 
 function init(): string
 {
@@ -47,6 +47,7 @@ function isValid(s: string): boolean
 				}
 				break;
 		}
+		cur.pop();
 	}
 	return true;
 }
