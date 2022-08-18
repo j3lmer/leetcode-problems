@@ -8,7 +8,7 @@ let expectedNums = [[2,2], [0,1,3,0,4]];
 function init(): string
 {
 	for (let i = 0; i < nums.length; i++) {
-		let k = removeElement(nums[i], vals[i], i === 1 ? true : false);
+		let k = removeElement(nums[i], vals[i]);
 
 		if (k !== expectedNums[i].length) {
 			return "Incorrect length.";	
@@ -26,7 +26,7 @@ function init(): string
 }
 
 
-function removeElement(nums: number[], val: number, test: boolean): number {
+function removeElement(nums: number[], val: number): number {
 
 	for (let i = 0; i < nums.length; i++) {
 		if(nums[i] === val) {
