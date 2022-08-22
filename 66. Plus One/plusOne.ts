@@ -6,9 +6,7 @@ let answers = [[1,2,4], [4,3,2,2], [1,0]];
 function init(): string {
 	for (let i = 0; i < integerArrays.length; i++) {
 		let ans = plusOne(integerArrays[i]);
-
 		if (!arraysEqual(ans, answers[i])) { return "Incorrect." }
-
 	}
 	return "Correct";
 }
@@ -29,18 +27,14 @@ function arraysEqual(a: number[], b: number[]) {
 
 function plusOne(digits: number[]): number[] {
 	let numString = "";
+	let numArr = [];
 	
 	for (let i = 0; i < digits.length; i++) {
 		numString += digits[i];
 	} 
-
+	
 	let num: number = +numString;
 	num++;
-
-
-	let numArr = [];
-	let counter = 0;
-
 	numString = num.toString();
 	
 	for (let i = 0; i < numString.length; i++) {
